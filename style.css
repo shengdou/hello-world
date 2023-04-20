@@ -1,0 +1,39 @@
+h3 {
+    text-align: center;
+    color: blue;
+    background-color: rgb(232, 224, 224);
+}
+.InputBook{
+    display: flex;
+    width: 100%;
+}
+thead tr td{
+background-color: blue;
+color: white;
+}
+div div{
+    flex:1;
+    flex-direction: row;
+}
+.col2{
+    position: relative;
+}
+
+ .item{
+    display: inline-block;
+    background-color: blue;
+    color: white;
+    width: 30%;
+    text-align: center;
+}
+
+.col2 div{
+    position: absolute;
+    bottom: 0;
+}
+.verify{
+    text-align: center;
+}
+table {
+    width: 90%;
+}

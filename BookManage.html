@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM编程实验</title>
+        <link rel="stylesheet" href="style.css">
+        <script>
+            var i=0;
+	function InputBook(){
+	
+	var tr1,books;
+	var mess1,mess2,mess3,mess4,mess5,mess6,mess7;
+	var node1,node2,node3,node4,node5,node6,node7;
+	var td1,td2,td3,td4,td5,td6,td7,td8;
+	tr1=document.createElement("tr");
+	td1=document.createElement("td");
+	td2=document.createElement("td");
+	td3=document.createElement("td");
+	td4=document.createElement("td");
+	td5=document.createElement("td");
+	td6=document.createElement("td");
+	td7=document.createElement("td");
+	td8=document.createElement("td");
+	books=document.getElementById("books");
+	
+	
+
+	mess1=document.getElementById("number").value;
+	node1=document.createTextNode(mess1);
+	td1.appendChild(node1);
+
+	mess2=document.getElementById("bookID").value;
+	node2=document.createTextNode(mess2);
+	td2.appendChild(node2);
+
+	mess3=document.getElementById("bookname").value;
+	node3=document.createTextNode(mess3);
+	td3.appendChild(node3);
+
+	mess4=document.getElementById("writer").value;
+	node4=document.createTextNode(mess4);
+	td4.appendChild(node4);
+
+	mess5=document.getElementById("price").value;
+	node5=document.createTextNode(mess5);
+	td5.appendChild(node5);
+
+	mess6=document.getElementById("year").value;
+	node6=document.createTextNode(mess6);
+	td6.appendChild(node6);
+
+	mess7=document.getElementById("ISBN").value
+	node7=document.createTextNode(mess7);
+	td7.appendChild(node7);
+
+	var but=document.createElement("input");
+	but.type="button";
+	but.id=i;
+	but.name="delete";
+	but.value="删除";
+	but.onclick=function (){
+	myDel(this.id);
+	};
+	
+	td8.appendChild(but);
+	tr1.appendChild(td1);
+	tr1.appendChild(td2);
+	tr1.appendChild(td3);
+	tr1.appendChild(td4);
+	tr1.appendChild(td5);
+	tr1.appendChild(td6);
+	tr1.appendChild(td7);
+	tr1.appendChild(td8);
+	tr1.id="tr"+i;
+	books.appendChild(tr1);
+	i++;
+}
+	function myDel(id){
+		
+	var btn=document.getElementById("tr"+id);
+
+	btn.parentNode.removeChild(btn);
+}
+        </script>
+    </head>
+    <body>
+        <h3>清华大学出版社图书管理平台</h3>
+        <h4>图书入库</h4>
+        <div class="InputBook">
+            <div class="col1">
+                <div>
+            <label class="item" for="number">序号</label>
+            <input type="text" name="number" id="number">
+            </div>
+            <div>
+            <label class="item" for="bookname">书名</label>
+            <input type="text" name="bookname" id="bookname">
+             </div>
+             <div>
+            <label class="item"for="price">定价</label>
+            <input type="text" name="price" id="price">
+            </div>
+            </div>
+            <div class="col2">
+                <div>
+                <label class="item"for="year">年代</label>
+                <input type="text" name="year" id="year">
+                </div>
+            </div>
+            <div class="col3">
+                <div>
+                <label class="item"for="bookID">书代号</label>
+                <input type="text" id="bookID" name="bookID">
+                </div>
+                <div>
+                <label class="item"for="writer">作者</label>
+                <input type="text" id="writer" name="writer">
+                </div>
+                <div>
+                <label class="item"for="ISBN">ISBN</label>
+                <input type="text" name="ISBN" id="ISBN">
+                </div>
+            </div>
+        </div>
+       <div class="verify"><input type="button" name="verify" id="verify" value="确认" onclick=InputBook()></div> 
+        <h4>现存图书列表</h4>
+        <table id="books">
+            <thead>
+            <tr><td  width="10%">序号</td><td width="20%">书代号</td><td width="20%">书名</td><td width="10%">定价</td><td width="10%">作者</td><td width="10%">年份</td><td width="20%">ISBN</td><td width="10%"></td></tr>
+            </thead>        
+        </table>
+    </body>
+</html>
